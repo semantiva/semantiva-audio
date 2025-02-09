@@ -47,7 +47,7 @@ input_audio = SingleChannelAudioDataType(np.random.rand(1000))
 factor = 2.0
 
 # Process the data using the algorithm
-output_audio = multiply_algorithm._operation(input_audio, factor)
+output_audio = multiply_algorithm(input_audio, factor)
 
 ```
 
