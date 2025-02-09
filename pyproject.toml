@@ -1,0 +1,39 @@
+[project]
+name = "semantiva_audio"
+version = "0.0.1"
+description = "Audio specialization of Semantiva framework."
+license = "MIT" 
+readme = "README.md" 
+requires-python = "==3.10.12"
+dependencies = [
+    "semantiva",
+    "black ==24.10.0",
+    "mypy ==1.14.1",
+    "numpy ==2.2.1",
+    "pylint ==3.3.3",
+    "pytest ==8.3.4",
+    "coverage",
+]
+distribution = true
+
+[tool.black]
+# Configuration for the black code formatter
+
+
+[tool.pylint]
+# Configuration for pylint (static analysis)
+max-line-length = 100  
+fail-under = 7.5
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.coverage.run]
+source = ["semantiva_audio"]
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+[tool.pdm.scripts]
+cicheck = "bash ./ci_pipeline.sh"  # Define the shell script as a PDM script
