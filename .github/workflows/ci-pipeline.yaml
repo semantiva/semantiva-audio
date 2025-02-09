@@ -81,7 +81,7 @@ jobs:
       id-token: write
     environment:
       name: pypi
-      url: https://pypi.org/p/semantiva
+      url: https://pypi.org/p/semantiva-audio
     
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v')  # Run only for tag pushes
     steps:
