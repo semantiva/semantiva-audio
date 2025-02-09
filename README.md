@@ -1,9 +1,7 @@
 # Semantiva - Audio specialization
 
 ## Overview
-
-`semantiva_audio` is the audio specialization of the [Semantiva](https://docs.semantiva.org/) framework. It offers tailored data types and operations for
-audio operations. This module provides algorithms for processing **single-channel** and **dual-channel** audio data.  It includes specialized algorithms for both types, as well as utilities for merging dual-channel audio into a single-channel format and expanding single-channel audio into dual-channel.
+Semantiva Audio is a proof of concept demonstrating how the [Semantiva](https://docs.semantiva.org/) framework can be specialized for audio processing. This project contains simple, illustrative examples rather than a full implementation, showcasing basic algorithms for single-channel and dual-channel audio processing, including merging, expansion, and multiplication. It also provides data probes for inspection and debugging.
 
 
 ## Installation
