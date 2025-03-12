@@ -1,5 +1,6 @@
 import pytest
 import numpy as np
+from typing import List, Dict
 from semantiva.logger import Logger
 from semantiva.payload_operations import Pipeline
 from semantiva_audio.processing.operations import SingleChannelAudioOperation
@@ -47,7 +48,7 @@ def test_pipeline_execution(single_channel_audio_data: SingleChannelAudioDataTyp
     load_specializations("audio")
 
     # Define node configurations
-    node_configurations = [
+    node_configurations: List[Dict] = [
         {
             "processor": "SingleChannelAudioMultiplyOperation",
             "parameters": {"factor": 2.0},
