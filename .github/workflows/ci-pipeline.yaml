@@ -65,6 +65,7 @@ jobs:
       - name: Install dependencies using PDM
         run: |
           pdm install
+          pdm add -d -e . # Add the current directory to the PYTHONPATH
 
       - name: Run pytest with coverage report
         run: |
