@@ -20,23 +20,23 @@ Below is a quick demonstration showing how to use the specialization.  This assu
 
 ```python
 import numpy as np
-from semantiva_audio.audio_data_types import SingleChannelAudioDataType
-from semantiva_audio.audio_operations import SingleChannelAudioAlgorithm
+from semantiva_audio.data_types import SingleChannelAudioDataType
+from semantiva_audio.processing.operations import SingleChannelAudioOperation
 
-class SingleChannelAudioMultiplyAlgorithm(SingleChannelAudioAlgorithm):
+class SingleChannelAudioMultiplyOperation(SingleChannelAudioOperation):
     """
     A specialized algorithm to multiply single-channel audio data by a given factor.
     """
 
-    def _operation(self, data, factor):
-        self.logger.debug("Inside the SingleChannelAudioMultiplyAlgorithm")
+    def _process_logic(self, data, factor):
+        self.logger.debug("Inside the SingleChannelAudioMultiplyOperation")
         multiplied_data = data.data * factor
         return SingleChannelAudioDataType(multiplied_data)
 
-# Example usage of SingleChannelAudioMultiplyAlgorithm
+# Example usage of SingleChannelAudioMultiplyOperation
 
-# Create an instance of the multiplication algorithm
-multiply_algorithm = SingleChannelAudioMultiplyAlgorithm()
+# Create an instance of the multiplication operation
+multiply_operation = SingleChannelAudioMultiplyOperation()
 
 # Example input: Single-channel audio data
 input_audio = SingleChannelAudioDataType(np.random.rand(1000))
@@ -44,8 +44,8 @@ input_audio = SingleChannelAudioDataType(np.random.rand(1000))
 # Define a multiplication factor
 factor = 2.0
 
-# Process the data using the algorithm
-output_audio = multiply_algorithm(input_audio, factor)
+# Process the data using the operation
+output_audio = multiply_operation(input_audio, factor)
 
 ```
 
